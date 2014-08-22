@@ -4,9 +4,7 @@
 # Make sure that MAC address of our gateway is in the arp cache.
 ##
 GATEWAY_IP=$(ip route | grep default | awk {'print $3'})
-printf "Gateway IP address detected ($GATEWAY_IP).\n"
 GATEWAY_MAC=$(arping -c1 -r $GATEWAY_IP)
-printf "Gateway MAC address detected ($GATEWAY_MAC).\n\n"
 
 ##
 # Run zmap

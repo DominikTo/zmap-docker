@@ -3,10 +3,11 @@
 # BUILD: docker build --no-cache --rm -t dominik/zmap .
 # RUN:   docker run dominik/zmap
 
-FROM ubuntu:14.10
+FROM ubuntu:15.04
 MAINTAINER Dominik Tobschall <dtobschall@gmail.com>
 
 RUN apt-get update && apt-get install -y \
+    iproute2 \
     arping \
     zmap
 
